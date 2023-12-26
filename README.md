@@ -13,9 +13,9 @@ Where -A is the argument, and OPTION is the corresponding option to said argumen
 
 Use more arguments when running to get more complex filters.
 
-If using the pre-compiled .exe file, replace "py PLR.py" with "PLR.exe"
+If using the pre-compiled .exe file, replace `py PLR.py` with `PLR.exe`
 
-If using argument options consisting of 2 or more words, enclose it in quotation marks. Ex. Viridian Forest should be "Viridian Forest".
+If using argument options consisting of 2 or more words, enclose it in quotation marks. Ex. `Viridian Forest` should be `"Viridian Forest"`.
 
 If filtering by Route 1-18, filter by Kanto or Unova as well, to avoid mixed results.
 
