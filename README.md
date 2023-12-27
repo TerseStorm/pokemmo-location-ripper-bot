@@ -8,7 +8,7 @@ The program works by reading the Pokedex (dex) files dumped directly from PokeMM
 To dump these files, go to
  > Settings -> Utilities -> Dump Moddable Resources -> Pokedex Data
 
-This dumps the needed files as a .zip file to the `dump\resources` directory.
+This dumps the needed files as a .zip file to the `dump\resources` directory in PokeMMO's install directory (usually in `C:\\Program Files\PokeMMO`).
 
 Run PLR once, and it will create a new folder in its directory called `dex_files` where the `dump.zip` file should be copied to.
 
