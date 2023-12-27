@@ -3,7 +3,7 @@ A commandline tool to quickly compile bulk location data for PokeMMO.
 
 ## Usage
 ### Dumping PokeMMO dex files
-A pre-dumped `dump.zip` is included. This has been dumped on 2023:12:27 UTC. It's recommended to always dump your own dex files.
+A pre-dumped `dump.zip` is included. This has been dumped on 2023-12-27 UTC. It's recommended to always dump your own dex files.
 
 The program works by reading the Pokedex (dex) files dumped directly from PokeMMO.
 
