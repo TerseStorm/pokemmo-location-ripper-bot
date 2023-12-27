@@ -2,6 +2,32 @@
 A commandline tool to quickly compile bulk location data for PokeMMO.
 
 ## Usage
+### Dumping PokeMMO dex files
+The program works by reading the Pokedex (dex) files dumped directly from PokeMMO.
+
+To dump these files, go to
+
+ > Settings -> Utilities -> Dump Moddable Resources -> Pokedex Data
+
+This dumps the needed files as a .zip file to the
+ > dump\resources
+directory
+
+Run PLR once, and it will create a new folder in it's directory called
+ > dex_files
+where the dump.zip should be copied to.
+
+Extract dump.zip to this folder.
+
+
+### Updating PokeMMO dex files
+Whenever the Pokedex in PokeMMO gets updated, the dex files should also be updated to reflect this.
+
+To do this, simply follow the steps from the section
+ > Dumping PokeMMO dex files
+but select "Replace All" when extracting.
+
+### Arguments
 For a list of all available arguments, use
  
   `$ py PLR.py --help`
@@ -47,4 +73,6 @@ Getting all Surfing encounters in Undella Bay
 
 ## Requirements
 Python 3.10+, which can be downloaded [here](https://www.python.org/downloads/).
+
+7-Zip or similar, which can be downloaded [here](https://www.7-zip.org/download.html)
 
