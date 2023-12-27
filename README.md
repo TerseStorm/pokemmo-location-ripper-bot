@@ -12,7 +12,7 @@ To dump these files, go to
 
 This dumps the needed files as a .zip file to the `dump\resources` directory in PokeMMO's install directory (usually in `C:\\Program Files\PokeMMO`).
 
-Run PLR once, and it will create a new folder in its directory called `dex_files` where the `dump.zip` file should be copied to.
+Run `plr` once, and it will create a new folder in its directory called `dex_files` where the `dump.zip` file should be copied to.
 
 Extract `dump.zip` to this folder.
 
@@ -28,17 +28,17 @@ Alternatively, if problems with this arises, simply delete the contents of the `
 ### Arguments
 For a list of all available arguments, run
  
-  `$ py PLR.py --help`
+  `$ py plr.py --help`
 
 For general usage, run
 
-  `$ py PLR.py -A OPTION`
+  `$ py plr.py -A OPTION`
   
 Where `-A` is the argument, and `OPTION` is the corresponding option to said argument.
 
 Use more arguments when running to get more complex filters.
 
-If using the pre-compiled .exe file, replace `py PLR.py` with `PLR.exe`
+If using the pre-compiled .exe file, replace `py plr.py` with `plr.exe`
 
 If using argument options consisting of 2 or more words, enclose it in quotation marks. Ex. `Viridian Forest` should be `"Viridian Forest"`.
 
@@ -47,27 +47,27 @@ If filtering by Route 1-18, filter by Kanto or Unova as well, to avoid mixed res
 ## Examples
 Getting all Hordes in Sinnoh
 
-  `$ py PLR.py --region Sinnoh --rarity Horde`
+  `$ py plr.py --region Sinnoh --rarity Horde`
 
 
 Getting all Lure encounters in Johto
 
-  `$ py PLR.py --region Johto --rarity Lure`
+  `$ py plr.py --region Johto --rarity Lure`
 
 
 Getting all encounters in Viridian Forest
 
-  `$ py PLR.py --location "Viridian Forest"`
+  `$ py plr.py --location "Viridian Forest"`
 
 
 Getting all Tentacruel locations with a minimum level of 40
 
-  `$ py PLR.py --name Tentacruel --minlevel`
+  `$ py plr.py --name Tentacruel --minlevel`
 
 
 Getting all Surfing encounters in Undella Bay
 
-  `$ py PLR.py --location "Undella Bay" --type Water`
+  `$ py plr.py --location "Undella Bay" --type Water`
 
 
 ## Requirements
