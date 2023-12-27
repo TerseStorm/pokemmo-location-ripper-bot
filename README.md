@@ -1,6 +1,9 @@
 # pokemmo-location-ripper
 A commandline tool to quickly compile bulk location data for PokeMMO.
 
+The code is an absolute mess and I know it, don't bother pointing it out. It might be rewritten in the future.
+
+
 ## Usage
 ### Dumping PokeMMO dex files
 A pre-dumped `dump.zip` is included. This has been dumped on 2023-12-27 UTC. It's recommended to always dump your own dex files.
