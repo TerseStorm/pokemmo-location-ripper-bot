@@ -74,3 +74,11 @@ Getting all Surfing encounters in Undella Bay
 Python 3.10+, which can be downloaded [here](https://www.python.org/downloads/).
 
 7-Zip or similar, which can be downloaded [here](https://www.7-zip.org/download.html)
+
+
+## Reporting problems
+Run the program with the argument `-logfile log` and send this file along with the command used to run the program, to me on Discord: `lyn1505`.
+
+
+## False positive
+The pre-compiled executable is most likely detected as a virus when being downloaded. It doesn't contain any malicious code, and is simply a by-product of precompiling into a single file. It can be fixed, but I have tried my best and can't figure it out, unfortunately. Either download Python and run the Python source file, or allow the file in your antivirus program.
