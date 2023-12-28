@@ -62,7 +62,7 @@ Getting all Lure encounters in Johto
 
 Getting all encounters in Viridian Forest
 
-  `/location_finder --location "Viridian Forest"`
+  `/location_finder --location Viridian Forest`
 
 
 Getting all Tentacruel locations with a minimum level of 40
@@ -72,7 +72,7 @@ Getting all Tentacruel locations with a minimum level of 40
 
 Getting all Surfing encounters in Undella Bay
 
-  `/location_finder --location "Undella Bay" --type Water`
+  `/location_finder --location Undella Bay --type Water`
 
 
 ## Requirements
