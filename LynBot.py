@@ -18,11 +18,13 @@ async def on_ready():
         
 
 @bot.slash_command(name = "location_finder", description = "Please work")
-async def repeat(ctx, command: str, parameter: str):
-        arguments = [command, parameter.capitalize()]
+async def repeat(ctx, first_command: str, first_parameter: str, second_command: str = "", second_parameter: str = "", third_command: str = "", third_parameter: str = ""):
+        arguments = [first_command, first_parameter.capitalize(), second_command, second_parameter.capitalize(), third_command, third_parameter.capitalize()]
         dex = Converter(arguments)
         dex.setFilters()
-        if "-h" in command or parameter=="help":
+        command = first_command + second_command + third_command
+        parameter = first_parameter + second_parameter + third_parameter
+        if "-h" in command or "help" in parameter:
             data = dex.helpSelector()
         else:
             data = dex.ParseAllLocationData()
@@ -31,7 +33,7 @@ async def repeat(ctx, command: str, parameter: str):
         elif len(data) > 2000:
             with open("outputFile.txt", "w") as f:
                 f.write(data)
-            await channel.send(file=disnake.File('outputFile.txt'))
+            await ctx.send(file=disnake.File('outputFile.txt'))
         else:
             await ctx.send("Please enter a valid parameter! For example, if entering a region make sure it is spelt correctly!")
 
