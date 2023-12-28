@@ -1,7 +1,7 @@
-# pokemmo-location-ripper
-A commandline tool to quickly compile bulk location data for PokeMMO.
+# pokemmo-location-ripper-bot
+A Discord bot to quickly compile bulk location data for PokeMMO.
 
-The code is an absolute mess and I know it, don't bother pointing it out. It might be rewritten in the future.
+Despite forking this code, my code is no prettier than the original creator LOL
 
 
 ## Usage
@@ -15,7 +15,7 @@ To dump these files, go to
 
 This dumps the needed files as a .zip file to the `dump\resources` directory in PokeMMO's install directory (usually in `C:\\Program Files\PokeMMO`).
 
-Run `plr` once, and it will create a new folder in its directory called `dex_files` where the `dump.zip` file should be copied to.
+Create a folder called `dex_files`.
 
 Extract `dump.zip` to this folder.
 
@@ -31,46 +31,48 @@ Alternatively, if problems with this arises, simply delete the contents of the `
 ### Arguments
 For a list of all available arguments, run
  
-  `$ py plr.py --help`
+  `/location_finder --help` or `/location_finder -h`
 
 For general usage, run
 
-  `$ py plr.py -A OPTION`
+  `/location_finder -A OPTION`
   
 Where `-A` is the argument, and `OPTION` is the corresponding option to said argument.
 
+For argument-specific help, use
+
+  `/location_finder -A help`
+
+Where `-A` is the argument.
+
 Use more arguments when running to get more complex filters.
-
-If using the pre-compiled .exe file, replace `py plr.py` with `plr.exe`
-
-If using argument options consisting of 2 or more words, enclose it in quotation marks. Ex. `Viridian Forest` should be `"Viridian Forest"`.
 
 If filtering by Route 1-18, filter by Kanto or Unova as well, to avoid mixed results.
 
 ## Examples
 Getting all Hordes in Sinnoh
 
-  `$ py plr.py --region Sinnoh --rarity Horde`
+  `/location_finder --region Sinnoh --rarity Horde`
 
 
 Getting all Lure encounters in Johto
 
-  `$ py plr.py --region Johto --rarity Lure`
+  `/location_finder --region Johto --rarity Lure`
 
 
 Getting all encounters in Viridian Forest
 
-  `$ py plr.py --location "Viridian Forest"`
+  `/location_finder --location "Viridian Forest"`
 
 
 Getting all Tentacruel locations with a minimum level of 40
 
-  `$ py plr.py --name Tentacruel --minlevel`
+  `/location_finder --name Tentacruel --minlevel`
 
 
 Getting all Surfing encounters in Undella Bay
 
-  `$ py plr.py --location "Undella Bay" --type Water`
+  `/location_finder --location "Undella Bay" --type Water`
 
 
 ## Requirements
@@ -83,5 +85,4 @@ Python 3.10+, which can be downloaded [here](https://www.python.org/downloads/).
 Run the program with the argument `-logfile log` and send this file along with the command used to run the program, to me on Discord: `lyn1505`.
 
 
-## False positive
-The pre-compiled executable is most likely detected as a virus when being downloaded. It doesn't contain any malicious code, and is simply a by-product of precompiling into a single file. It can be fixed, but I have tried my best and can't figure it out, unfortunately. Either download Python and run the Python source file, or allow the file in your antivirus program.
+
