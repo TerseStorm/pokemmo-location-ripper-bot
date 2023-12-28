@@ -16,6 +16,8 @@ class Converter:
         self.filter_type = None
         self.filter_location = None
         self.log_filename = None
+        self.logging = False
+        
         self.directory = os.getcwd() + '/dex_files'
         self.avail_args_short = ["-h",
                                  "-o",
@@ -39,7 +41,7 @@ class Converter:
                                 "--logfile"]
 
     def validateArgs(self):
-        if self.pokeArgs[0] not in self.avail_args_short and self.pokeArgs[0] not in self.avail_args_long:
+        if (self.pokeArgs[0] not in self.avail_args_short and self.pokeArgs[0] not in self.avail_args_long) or (self.pokeArgs[2] not in self.avail_args_short and self.pokeArgs[2] not in self.avail_args_long) or (self.pokeArgs[4] not in self.avail_args_short and self.pokeArgs[4] not in self.avail_args_long):
             return f"Make sure the 'command' argument is one of these: {self.avail_args_short} or {self.avail_args_long}"
         else:
             return "valid"
@@ -216,7 +218,7 @@ class Converter:
             except:
                 self.filter_location = self.GetValueOfArg("--location", self.pokeArgs)
         if "-lf" in self.pokeArgs or "--logfile" in self.pokeArgs:
-            logging = True
+            self.logging = True
             try:
                 self.log_filename = self.GetValueOfArg("-lf", self.pokeArgs)
             except:
@@ -242,6 +244,8 @@ class Converter:
         # For each JSON file in directory, call ParseLocationData and increment counter
         for filename in os.listdir(self.directory):
             file = os.path.join(self.directory, filename)
+            if self.logging:
+                log_file.write(f"Currently parsing: {file}\n")
             if os.path.isfile(file):
                 # print(f"Currently converting: {filename}")
                 loc_data = self.ParseLocationData(file,
@@ -276,10 +280,16 @@ class Converter:
                                 "--maxlevel": self.levelHelp,
                                 "--type": self.typeHelp,
                                 "--location": self.locationHelp}
-        if "-h" in self.pokeArgs[0]:
+        if "-h" in self.pokeArgs[0] or "-h" in self.pokeArgs[2] or "-h" in self.pokeArgs[4]:
             return self.PrintHelpMenu()
         else:
-            return helpSwitch[self.pokeArgs[0]]()
+            if helpSwitch.get(self.pokeArgs[0]) is not None:
+                return helpSwitch[self.pokeArgs[0]]()
+            if helpSwitch.get(self.pokeArgs[2]) is not None:
+                return helpSwitch[self.pokeArgs[2]]()
+            if helpSwitch.get(self.pokeArgs[4]) is not None:
+                return helpSwitch[self.pokeArgs[4]]()
+
 
     def nameHelp(self):
         return "make sure that the parameter is a valid Pokemon name."
@@ -291,7 +301,7 @@ class Converter:
         return "make sure that the parameter is either a valid maximum or minimum level (1-100)"
 
     def typeHelp(self):
-        return "make sure that the parameter is a valid pokemon type in PokeMMO."
+        return "make sure that the parameter is a valid encounter type in PokeMMO."
 
     def locationHelp(self):
         return "make sure that the parameter is a valid accessible location in PokeMMO."
