@@ -11,7 +11,7 @@ commands.CommandSyncFlags()
 @bot.event
 async def on_ready():
     print("bot is ready")
-    print("https://discord.com/api/oauth2/authorize?client_id=1189927152406253660&permissions=8&scope=bot")
+    print("Your-oauth-link-here")
 
 
 
@@ -35,4 +35,4 @@ async def repeat(ctx, command: str, parameter: str):
         else:
             await ctx.send("Please enter a valid parameter! For example, if entering a region make sure it is spelt correctly!")
 
-bot.run('MTE4OTkyNzE1MjQwNjI1MzY2MA.G1f2gm.KSBLUyYuI4viYC9yqfCxnakPn8sgb9Afvznlas')
+bot.run('Your-token-here')
